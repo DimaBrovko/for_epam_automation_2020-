@@ -1,5 +1,6 @@
 /selene-intro/selene_intro.egg-info/
 /venv/
+.idea/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
