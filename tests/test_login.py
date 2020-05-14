@@ -1,6 +1,8 @@
 from selene.support.shared import browser, config
 from selene import by, have, be
 
+config.timeout = 8
+
 def test_login():
     browser.open_url("https://www.training.epam.ua/")
 
