@@ -1,7 +1,20 @@
 from selene.support.shared import browser, config
 from selene import by, have, be
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+
+chrome_options = Options()
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('--no-sandbox')
+chrome_options.add_argument('--disable-dev-shm-usage')
+driver = webdriver.Chrome('/bin/chromedriver', chrome_options=chrome_options)
+browser.config.driver = driver
+
+browser.config.window_height = 1080
+browser.config.window_width = 1080
 
 config.timeout = 8
+
 
 def test_login():
     browser.open_url("https://www.training.epam.ua/")
