@@ -1,10 +1,1 @@
-1. Run poetry install
-
-2. PyCharm should specify in (Preferences>Project: selene-intro>Project Interpreter) the path to the created virtual environment so that the IDE understands where to look for dependencies in the project. Most likely, there will be no newly created environment in the list, and a new one should be added.
-
-    Name and path can be found using:
-
-    $ poetry env list --full-path
-
-    Example:
-    C:\Users\{User_Name}\AppData\Local\pypoetry\Cache\virtualenvs\selene-intro-{&&&&&&&&&&}/Scripts/python.exe
+test jenkins
