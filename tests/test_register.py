@@ -6,7 +6,7 @@ chrome_options = Options()
 chrome_options.add_argument('--headless')
 chrome_options.add_argument('--no-sandbox')
 chrome_options.add_argument('--disable-dev-shm-usage')
-driver = webdriver.Chrome('/bin/chromedriver', chrome_options=chrome_options)
+driver = webdriver.Chrome('/bin/chromedriver', options=chrome_options)
 browser.config.driver = driver
 
 browser.config.window_height = 1080
