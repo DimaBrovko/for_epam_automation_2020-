@@ -1,4 +1,5 @@
 from selene.support.shared import browser, config
+from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
 chrome_options = Options()
