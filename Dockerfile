@@ -1,9 +1,9 @@
 FROM python:3
-RUN pip install poetry
+RUN pip install poetry --no-cache-dir
 
 COPY ./ ./
 
-RUN poetry install --no-cache-dir
+RUN poetry install --no-root
 
 # install google chrome
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
