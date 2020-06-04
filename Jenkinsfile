@@ -4,13 +4,13 @@ pipeline {
     stages {
         stage('Test_login') {
             steps {
-                sh "sudo poetry run pytest/tests/test_login.py"
+                sh "poetry run pytest/tests/test_login.py --no-cache-dir"
                 echo "End of Stage Build"
             }
         }
         stage('Test_register') {
             steps {
-                sh "sudo poetry run pytest/tests/test_register.py"
+                sh "poetry run pytest/tests/test_register.py --no-cache-dir"
                 echo "End of Stage Build"
             }
         }
