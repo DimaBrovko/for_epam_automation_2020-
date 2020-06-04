@@ -6,11 +6,11 @@ RUN useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
 
 USER docker
 
-RUN pip install poetry --no-cache-dir
+RUN pip install poetry
 
 COPY ./ ./
 
-RUN poetry install --no-root
+RUN poetry install
 
 # install google chrome
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
