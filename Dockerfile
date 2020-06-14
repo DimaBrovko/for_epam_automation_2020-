@@ -20,11 +20,3 @@ RUN wget -O /tmp/chromedriver.zip http://chromedriver.storage.googleapis.com/`cu
 RUN unzip /tmp/chromedriver.zip chromedriver -d /bin
 
 RUN poetry run pytest /tests/test_login.py
-#RUN poetry run pytest /tests/test_register.py
-
-# set display port to avoid crash
-#ENV DISPLAY=:99
-
-#EXPOSE 4444
-
-#CMD ["/bin/bash"]
