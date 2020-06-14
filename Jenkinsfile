@@ -7,12 +7,6 @@ pipeline {
                 sh "poetry run pytest/tests/test_login.py --no-cache-dir"
                 echo "End of Stage Build"
             }
-        }
-        stage('Test_register') {
-            steps {
-                sh "poetry run pytest/tests/test_register.py --no-cache-dir"
-                echo "End of Stage Build"
             }
         }
-   }
-}
+    }

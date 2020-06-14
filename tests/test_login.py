@@ -20,17 +20,23 @@ def test_login():
     browser.open_url("https://www.training.epam.ua/")
 
     # Sign In
-    browser.element('//div[@class="header-control header-auth"]').click()
+    browser.element('//a[@class="header-auth__signin"]').click()
 
-    # Enter valid data
-    browser.element('//input[@id="signInEmail"]').should(be.blank).type('test2020.epam@gmail.com')
-    browser.element('//input[@id="signInPassword"]').should(be.blank).type('Qwe123ewQ')
+    # Login
+    try:
+        browser.element('//div[@class ="identity-forget uk-flex-none"]').click()
+        browser.element('//input[@id="username"]').should(be.blank).type('test2020.epam@gmail.com')
+        browser.element('//input[@id="password"]').should(be.blank).type('Qwe123ewQ')
+    except:
+        browser.element('//input[@id="username"]').should(be.blank).type('test2020.epam@gmail.com')
+        browser.element('//input[@id="password"]').should(be.blank).type('Qwe123ewQ')
 
     # Click 'Sign in' button in pop-up window
-    browser.element('//input[contains(@class,"popup-reg-sign-in-form__sign-in")]').click()
+    browser.element('//input[@id="kc-login"]').click()
 
     # Check login
-    browser.all('//div[@class="user-info__name"]').should(have.text('test2020.epam'))
+    # browser.all('//div[@class="user-info__name"]').should(have.text('test2020.epam'))
+    browser.all('// div[@class ="dropdown user-info-desktop"]').should(have.text('test2020.epam'))
 
     # Sign out
     browser.element('//div[@class="dropdown user-info-desktop"]//div[@class="user-info__arrow"]').click()
